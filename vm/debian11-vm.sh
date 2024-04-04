@@ -8,11 +8,13 @@
 function header_info {
   clear
   cat <<"EOF"
-    ____       __    _                ______
-   / __ \___  / /_  (_)___ _____     <  /__ \
-  / / / / _ \/ __ \/ / __ `/ __ \    / /__/ /
- / /_/ /  __/ /_/ / / /_/ / / / /   / // __/
-/_____/\___/_.___/_/\__,_/_/ /_/   /_//____/
+ _____        _     _               __ __ 
+ |  __ \     | |   (_)             /_ /_ |
+ | |  | | ___| |__  _  __ _ _ __    | || |
+ | |  | |/ _ \ '_ \| |/ _` | '_ \   | || |
+ | |__| |  __/ |_) | | (_| | | | |  | || |
+ |_____/ \___|_.__/|_|\__,_|_| |_|  |_||_|
+                                          
 
 EOF
 }
@@ -407,7 +409,7 @@ pvesm alloc $STORAGE $VMID $DISK0 4M 1>&/dev/null
 qm importdisk $VMID ${FILE} $STORAGE ${DISK_IMPORT:-} 1>&/dev/null
 qm set $VMID \
   -efidisk0 ${DISK0_REF}${FORMAT} \
-  -scsi0 ${DISK1_REF},${DISK_CACHE}${THIN}size=2G \
+  -scsi0 ${DISK1_REF},${DISK_CACHE}${THIN}size=20G \
   -boot order=scsi0 \
   -serial0 socket \
   -description "<div align='center'><a href='https://Helper-Scripts.com'><img src='https://raw.githubusercontent.com/tteck/Proxmox/main/misc/images/logo-81x112.png'/></a>
